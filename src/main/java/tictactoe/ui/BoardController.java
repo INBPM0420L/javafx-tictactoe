@@ -77,7 +77,7 @@ public abstract class BoardController {
 
     protected StackPane createSquare(
             final double size,
-            @NonNull final TicTacToeState.State value) {
+            @NonNull final TicTacToeState.Value value) {
         final var square = new StackPane();
         square.setPrefWidth(size);
         square.setPrefHeight(size);

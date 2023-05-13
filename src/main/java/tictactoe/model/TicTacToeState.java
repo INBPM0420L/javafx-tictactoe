@@ -15,8 +15,8 @@ public class TicTacToeState {
     int width;
     int height;
     @Getter(AccessLevel.PRIVATE)
-    State[][] board;
-    State nextPlayer;
+    Value[][] board;
+    Value nextPlayer;
 
 
     public TicTacToeState(
@@ -27,21 +27,21 @@ public class TicTacToeState {
         this.length = length;
         this.width = width;
         this.height = height;
-        this.board = new State[height][width];
-        this.nextPlayer = State.BLUE;
+        this.board = new Value[height][width];
+        this.nextPlayer = Value.BLUE;
 
         for (int i = 0; i < height; i++) {
-            Arrays.fill(this.board[i], State.EMPTY);
+            Arrays.fill(this.board[i], Value.EMPTY);
         }
     }
 
-    public State getCell(final int row, final int col) {
+    public Value getCell(final int row, final int col) {
         return board[row][col];
     }
 
     public boolean canMove(final int row, final int col) {
         try {
-            if (getWinner().isPresent() || board[row][col] != State.EMPTY) {
+            if (getWinner().isPresent() || board[row][col] != Value.EMPTY) {
                 return false;
             }
         } catch (final ArrayIndexOutOfBoundsException ignored) {
@@ -51,7 +51,7 @@ public class TicTacToeState {
     }
 
     public TicTacToeState doMove(final int row, final int col) {
-        final var newBoard = new State[height][];
+        final var newBoard = new Value[height][];
         for (int i = 0; i < height; i++) {
             newBoard[i] = Arrays.copyOf(board[i], width);
         }
@@ -59,19 +59,19 @@ public class TicTacToeState {
 
         return this.toBuilder()
                 .nextPlayer(switch (nextPlayer) {
-                    case RED -> State.BLUE;
-                    case BLUE -> State.RED;
+                    case RED -> Value.BLUE;
+                    case BLUE -> Value.RED;
                     default -> throw new IllegalStateException();
                 })
                 .board(newBoard)
                 .build();
     }
 
-    public Optional<State> getWinner() {
+    public Optional<Value> getWinner() {
         var hasEmpty = false;
         for (int row = 0; row < height; row++) {
             for (int col = 0; col < width; col++) {
-                if (board[row][col] == State.EMPTY) {
+                if (board[row][col] == Value.EMPTY) {
                     hasEmpty = true;
                     continue;
                 }
@@ -88,7 +88,7 @@ public class TicTacToeState {
             }
         }
 
-        return hasEmpty ? Optional.empty() : Optional.of(State.EMPTY);
+        return hasEmpty ? Optional.empty() : Optional.of(Value.EMPTY);
     }
 
     private boolean checkHorizontal(final int row, final int col) {
@@ -138,7 +138,7 @@ public class TicTacToeState {
         return sb.toString();
     }
 
-    public enum State {
+    public enum Value {
         EMPTY, RED, BLUE;
     }
 }

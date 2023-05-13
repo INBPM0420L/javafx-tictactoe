@@ -1,7 +1,5 @@
 package tictactoe.ui;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
@@ -136,7 +134,7 @@ public final class GameController extends BoardController {
 
     protected StackPane createSquare(
             final double size,
-            @NonNull final TicTacToeState.State value) {
+            @NonNull final TicTacToeState.Value value) {
         final var square = super.createSquare(size, value);
         if (inGame.get()) {
             square.getStyleClass().add("inGame");

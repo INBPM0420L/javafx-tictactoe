@@ -13,7 +13,7 @@ public class MyProperties {
     String playerBlue;
     String playerRed;
     List<Entry> history;
-    TicTacToeState.State firstPlayer;
+    TicTacToeState.Value firstPlayer;
     int width;
     int height;
     int length;
