@@ -1,0 +1,21 @@
+.square {
+    -fx-border-style: solid;
+    -fx-background-color: white;
+}
+
+.square.inGame:hover {
+    -fx-background-color: yellow;
+}
+
+VBox {
+    -fx-padding: 10px;
+}
+
+Button {
+    -fx-end-margin: 10px;
+    -fx-start-margin: 10px;
+}
+
+HBox {
+    -fx-spacing: 10px;
+}

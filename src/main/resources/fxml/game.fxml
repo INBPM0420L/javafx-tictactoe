@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="400.0" prefWidth="714.0" stylesheets="@ui.css" xmlns="http://javafx.com/javafx/18"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="tictactoe.ui.GameController">
+    <children>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Label text="Blue Player"/>
+                        <Label fx:id="bluePlayerLabel" text="Label" textFill="BLUE">
+                            <font>
+                                <Font size="25.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Label text="Red Player"/>
+                        <Label fx:id="redPlayerLabel" text="Label" textFill="RED">
+                            <font>
+                                <Font size="25.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+            <children>
+                <Button fx:id="startButton" mnemonicParsing="false" onAction="#onStartGame" text="New"/>
+                <Button fx:id="finishButton" mnemonicParsing="false" onAction="#onFinishGame" text="Finish"/>
+                <Button fx:id="exitButton" mnemonicParsing="false" onAction="#onExitButton" text="Exit"/>
+                <Button fx:id="saveButton" mnemonicParsing="false" onAction="#onSaveButton" text="Save"/>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Label text="Width"/>
+                        <Slider fx:id="widthSlider" max="30.0" min="3.0"/>
+                        <Label fx:id="widthDisplay"/>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Label text="Height"/>
+                        <Slider fx:id="heightSlider" max="30.0" min="3.0"/>
+                        <Label fx:id="heightDisplay"/>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Label text="Length"/>
+                        <Slider fx:id="lengthSlider" max="30.0" min="3.0"/>
+                        <Label fx:id="lengthDisplay"/>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Label text="Size"/>
+                        <Slider fx:id="sizeSlider" min="10.0" value="50.0"/>
+                        <Label fx:id="sizeDisplay"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <children>
+                <GridPane fx:id="board" alignment="BOTTOM_CENTER" maxWidth="-Infinity" minHeight="-Infinity"
+                          minWidth="-Infinity">
+                    <padding>
+                        <Insets top="50.0"/>
+                    </padding>
+                </GridPane>
+            </children>
+        </HBox>
+    </children>
+</VBox>

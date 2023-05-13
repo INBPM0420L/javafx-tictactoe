@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="316.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tictactoe.ui.OpeningController">
+    <Label layoutX="182.0" layoutY="77.0" text="TicTacToe" textFill="#002366">
+        <font>
+            <Font name="MathJax_Main-Bold" size="36.0" />
+        </font>
+    </Label>
+   <HBox alignment="CENTER" prefHeight="103.0" prefWidth="600.0" spacing="20.0">
+      <children>
+         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+            <children>
+                <Label text="Player Blue" />
+                <TextField fx:id="playerBlueTextField" prefHeight="26.0" prefWidth="158.0" />
+            </children>
+         </VBox>
+         <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0" spacing="10.0">
+            <children>
+               <Label text="Player Red" />
+                <TextField fx:id="playerRedTextField" prefHeight="26.0" prefWidth="158.0" />
+            </children>
+         </VBox>
+      </children>
+   </HBox>
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <children>
+          <Label fx:id="errorLabel" prefHeight="16.0" prefWidth="169.0" textAlignment="CENTER" textFill="#e30e0e" />
+      </children>
+   </HBox>
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+      <children>
+          <Button fx:id="startButton" mnemonicParsing="false" onAction="#onStartButton" prefHeight="51.0" prefWidth="105.0" text="Open Game" />
+          <Button fx:id="loadButton" mnemonicParsing="false" onAction="#onLoadButton" prefHeight="51.0" prefWidth="105.0" text="Load History" />
+      </children>
+   </HBox>
+</VBox>
