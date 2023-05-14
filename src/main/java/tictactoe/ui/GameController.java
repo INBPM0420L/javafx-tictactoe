@@ -152,14 +152,14 @@ public final class GameController extends BoardController {
         Optional.of(model.get())
                 .filter(model -> model.canMove(row, col))
                 .map(model -> model.doMove(row, col))
-                .ifPresent(model -> {
+                .ifPresent(next -> {
                     properties.getHistory()
                             .add(MyProperties.Entry.of(col, row));
-
-                    model.getWinner()
+                    model.set(next);
+                    next.getWinner()
                             .ifPresent(winner -> {
                                 inGame.set(false);
-                                drawGrid(model);
+                                drawGrid(next);
                             });
                 });
     }
