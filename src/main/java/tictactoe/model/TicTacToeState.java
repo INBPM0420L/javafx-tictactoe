@@ -15,7 +15,7 @@ public class TicTacToeState {
     int length;
     int width;
     int height;
-    @Getter(AccessLevel.NONE)
+    @Getter(AccessLevel.PACKAGE)
     Value[][] board;
     Value nextPlayer;
 
