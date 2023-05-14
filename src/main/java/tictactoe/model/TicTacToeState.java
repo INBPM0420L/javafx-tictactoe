@@ -10,11 +10,12 @@ import java.util.function.BiPredicate;
 @Value
 @Builder(toBuilder = true)
 @AllArgsConstructor
+@Getter(AccessLevel.PUBLIC)
 public class TicTacToeState {
     int length;
     int width;
     int height;
-    @Getter(AccessLevel.PRIVATE)
+    @Getter(AccessLevel.NONE)
     Value[][] board;
     Value nextPlayer;
 

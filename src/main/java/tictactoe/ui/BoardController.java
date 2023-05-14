@@ -52,7 +52,8 @@ public abstract class BoardController {
             @NonNull final TicTacToeState model) {
         board.setHgap(sizeSlider.getValue() / 10.0);
         board.setVgap(sizeSlider.getValue() / 10.0);
-        board.setPrefWidth(model.getWidth() * sizeSlider.getValue() + (model.getWidth() - 1) * (sizeSlider.getValue() / 10.0));
+        board.setPrefWidth(model
+                .getWidth() * sizeSlider.getValue() + (model.getWidth() - 1) * (sizeSlider.getValue() / 10.0));
         board.setPrefHeight(model.getHeight() * sizeSlider.getValue() + (model.getHeight() - 1) * (sizeSlider.getValue() / 10.0));
 
         board.getChildren().clear();
