@@ -127,14 +127,14 @@ public class TicTacToeStateTest {
         // given
         TicTacToeState.Value[][] expectedBoard = boardReader.readTestData("tictactoe/model/doMove/valid_expected_blue.json");
         TicTacToeState.Value[][] initialBoard = boardReader.readTestData("tictactoe/model/doMove/valid_initial.json");
-        var underTest = buildTicTacToeState(initialBoard, TicTacToeState.Value.BLUE);
+        var initialState = buildTicTacToeState(initialBoard, TicTacToeState.Value.BLUE);
 
         // when
-        var actual = underTest.doMove(0, 2);
+        var underTest = initialState.doMove(0, 2);
 
         // then
-        Assertions.assertArrayEquals(expectedBoard, actual.getBoard());
-        Assertions.assertEquals(TicTacToeState.Value.RED, actual.getNextPlayer());
+        Assertions.assertArrayEquals(expectedBoard, underTest.getBoard());
+        Assertions.assertEquals(TicTacToeState.Value.RED, underTest.getNextPlayer());
     }
 
     @Test
@@ -143,14 +143,14 @@ public class TicTacToeStateTest {
         // given
         TicTacToeState.Value[][] expectedBoard = boardReader.readTestData("tictactoe/model/doMove/valid_expected_red.json");
         TicTacToeState.Value[][] initialBoard = boardReader.readTestData("tictactoe/model/doMove/valid_initial.json");
-        var underTest = buildTicTacToeState(initialBoard, TicTacToeState.Value.RED);
+        var initialState = buildTicTacToeState(initialBoard, TicTacToeState.Value.RED);
 
         // when
-        var actual = underTest.doMove(0, 2);
+        var underTest = initialState.doMove(0, 2);
 
         // then
-        Assertions.assertArrayEquals(expectedBoard, actual.getBoard());
-        Assertions.assertEquals(TicTacToeState.Value.BLUE, actual.getNextPlayer());
+        Assertions.assertArrayEquals(expectedBoard, underTest.getBoard());
+        Assertions.assertEquals(TicTacToeState.Value.BLUE, underTest.getNextPlayer());
     }
 
     @Test
